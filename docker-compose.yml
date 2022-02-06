@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: dev.dockerfile
+    container_name: mecab-parser_app
+    environment:
+      MECABRC: /etc/mecabrc
+      TZ: Asia/Tokyo
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./app
+        target: /var/app

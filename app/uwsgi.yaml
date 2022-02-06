@@ -1,0 +1,10 @@
+uwsgi:
+  http: :8080
+  wsgi-file: /var/app/app.py
+  callable: app
+  master: true
+  processes: 1
+  chmod-socket: 666
+  vacuum: true
+  die-on-term: true
+  py-autoreload: 1
